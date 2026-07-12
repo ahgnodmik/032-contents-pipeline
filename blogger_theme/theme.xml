@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3'
+      b:responsive='true' b:templateVersion='2.0.0'
+      expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml'
+      xmlns:b='http://www.google.com/2005/gml/b'
+      xmlns:data='http://www.google.com/2005/gml/data'
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <b:include data='blog' name='all-head-content'/>
+  <script async='async' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8527804772343765' crossorigin='anonymous'/>
+  <title><data:blog.pageTitle/></title>
+
+  <b:skin><![CDATA[
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;font-size:17px;line-height:1.85;color:#222;background:#f5f5f5}
+a{color:#1a73e8;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto}
+
+/* ===== LAYOUT ===== */
+.outer-wrapper{max-width:1160px;margin:0 auto;padding:0 16px}
+.content-wrapper{display:grid;grid-template-columns:160px 1fr 300px;gap:20px;align-items:flex-start;margin-top:24px}
+.main-content{min-width:0}
+.sidebar-wrapper{min-width:0}
+
+/* ===== 왼쪽 광고 ===== */
+.ad-left-wrapper{width:160px}
+.ad-left-sticky{position:sticky;top:80px;text-align:center;background:#fff;border-radius:8px;padding:10px 6px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+
+/* ===== 글 목록 중간 광고 ===== */
+.ad-mid-list{background:#fff;border-radius:8px;text-align:center;padding:14px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+
+/* ===== HEADER ===== */
+#header{background:#1a73e8;color:#fff;padding:0}
+#header h1{font-size:22px;font-weight:700;padding:16px 0}
+#header h1 a{color:#fff}
+#header p.description{font-size:13px;opacity:.85;padding-bottom:14px}
+
+/* ===== 헤더 광고 ===== */
+.ad-header{background:#fff;text-align:center;padding:10px 0;border-bottom:1px solid #e0e0e0}
+
+/* ===== NAV ===== */
+nav.blog-nav{background:#155db2;padding:0 16px}
+nav.blog-nav ul{display:flex;list-style:none;gap:0;max-width:1100px;margin:0 auto}
+nav.blog-nav li a{display:block;padding:10px 14px;color:#fff;font-size:14px;font-weight:500}
+nav.blog-nav li a:hover{background:rgba(255,255,255,.15);text-decoration:none}
+
+/* ===== POST CARD (목록) ===== */
+.post-outer{background:#fff;border-radius:8px;margin-bottom:20px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.post-title{font-size:20px;font-weight:700;padding:20px 20px 6px;line-height:1.4}
+.post-title a{color:#1a1a1a}
+.post-title a:hover{color:#1a73e8;text-decoration:none}
+.post-meta{font-size:13px;color:#888;padding:0 20px 10px}
+.post-body{padding:0 20px 20px;color:#333;line-height:1.9}
+.post-body h2{font-size:19px;font-weight:700;margin:28px 0 10px;color:#1a1a1a;border-left:4px solid #1a73e8;padding-left:10px}
+.post-body h3{font-size:16px;font-weight:700;margin:20px 0 8px;color:#333}
+.post-body p{margin-bottom:14px}
+.post-body ul,.post-body ol{margin:10px 0 16px 22px}
+.post-body li{margin-bottom:6px}
+.post-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+.post-body table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.post-body table td{padding:9px 12px;border-bottom:1px solid #e8e8e8}
+.post-body table tr:nth-child(even){background:#f8f9ff}
+
+/* ===== 신청 링크 섹션 ===== */
+.post-body .apply-links{background:#e8f0fe;border-radius:8px;padding:18px 20px;margin:24px 0}
+.post-body .apply-links h3{color:#1a73e8;margin-bottom:12px;font-size:16px}
+.post-body .apply-links ul{margin-left:0;list-style:none}
+.post-body .apply-links li{margin-bottom:10px;padding:10px 14px;background:#fff;border-radius:6px;border-left:3px solid #1a73e8}
+.post-body .apply-links a{font-weight:700;font-size:15px;color:#1a73e8}
+.post-body .apply-links a:hover{text-decoration:underline}
+
+/* ===== 인아티클 광고 ===== */
+.ad-in-article{text-align:center;margin:28px 0;padding:10px;background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee}
+.ad-label{font-size:11px;color:#aaa;margin-bottom:4px}
+
+/* ===== 포스트 하단 광고 ===== */
+.ad-post-footer{text-align:center;margin:28px 0}
+
+/* ===== LABEL (태그) ===== */
+.post-labels{padding:8px 20px 16px;font-size:13px}
+.post-labels span{margin-right:4px;color:#888}
+.post-labels a{display:inline-block;background:#e8f0fe;color:#1a73e8;border-radius:20px;padding:3px 10px;font-size:12px;margin:2px}
+.post-labels a:hover{background:#1a73e8;color:#fff;text-decoration:none}
+
+/* ===== SIDEBAR ===== */
+.sidebar-wrapper .widget{background:#fff;border-radius:8px;padding:18px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.sidebar-wrapper h2.title{font-size:15px;font-weight:700;color:#1a1a1a;border-bottom:2px solid #1a73e8;padding-bottom:8px;margin-bottom:12px}
+.sidebar-wrapper .widget ul{list-style:none}
+.sidebar-wrapper .widget li{padding:7px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.sidebar-wrapper .widget li:last-child{border:none}
+.ad-sidebar{text-align:center}
+
+/* ===== PAGINATION ===== */
+.blog-pager{text-align:center;padding:20px 0}
+.blog-pager a{display:inline-block;padding:9px 22px;background:#1a73e8;color:#fff;border-radius:4px;font-size:14px;margin:4px}
+.blog-pager a:hover{background:#155db2;text-decoration:none}
+
+/* ===== FOOTER ===== */
+#footer{background:#222;color:#aaa;text-align:center;padding:24px 16px;margin-top:40px;font-size:13px}
+#footer a{color:#888}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .content-wrapper{grid-template-columns:1fr 280px}
+  .ad-left-wrapper{display:none}
+}
+@media(max-width:640px){
+  .content-wrapper{grid-template-columns:1fr}
+  .sidebar-wrapper{display:none}
+  .post-title{font-size:18px}
+  .post-body h2{font-size:17px}
+  nav.blog-nav ul{flex-wrap:wrap}
+}
+  ]]></b:skin>
+</head>
+
+<body>
+
+<!-- 헤더 광고 (애드센스 승인 후 코드 삽입) -->
+<div class='ad-header'>
+  <div class='outer-wrapper'>
+    <div class='ad-label'>광고</div>
+    <!-- ADSENSE-HEADER-START -->
+    <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-8527804772343765' data-ad-slot='auto' data-ad-format='auto' data-full-width-responsive='true'/>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- ADSENSE-HEADER-END -->
+  </div>
+</div>
+
+<!-- 헤더 -->
+<div id='header'>
+  <div class='outer-wrapper'>
+    <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Header1' locked='true' title='블로그 제목' type='Header' version='2'>
+        <b:includable id='main'>
+          <b:if cond='data:title != &quot;&quot;'>
+            <h1><a expr:href='data:blog.homepageUrl'><data:title/></a></h1>
+          </b:if>
+          <b:if cond='data:description != &quot;&quot;'>
+            <p class='description'><data:description/></p>
+          </b:if>
+        </b:includable>
+      </b:widget>
+    </b:section>
+  </div>
+</div>
+
+<!-- 네비게이션 -->
+<nav class='blog-nav'>
+  <ul>
+    <li><a expr:href='data:blog.homepageUrl'>홈</a></li>
+    <li><a href='#'>정부지원금</a></li>
+    <li><a href='#'>출산·육아</a></li>
+    <li><a href='#'>주거·생활</a></li>
+    <li><a href='#'>지역별 지원</a></li>
+  </ul>
+</nav>
+
+<!-- 본문 -->
+<div class='outer-wrapper'>
+  <div class='content-wrapper'>
+
+    <!-- 왼쪽 광고 (160×600 세로 배너) -->
+    <div class='ad-left-wrapper'>
+      <div class='ad-left-sticky'>
+        <div class='ad-label'>광고</div>
+        <!-- ADSENSE-LEFT-START -->
+        <ins class='adsbygoogle' style='display:inline-block;width:160px;height:600px' data-ad-client='ca-pub-8527804772343765' data-ad-slot='auto'/>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <!-- ADSENSE-LEFT-END -->
+      </div>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div class='main-content'>
+      <b:section class='main' id='main' showaddelement='no'>
+        <b:widget id='Blog1' locked='true' title='블로그 포스트' type='Blog' version='2'>
+          <b:includable id='main'>
+            <b:loop values='data:posts' var='post'>
+              <div class='post-outer' itemscope='' itemtype='http://schema.org/BlogPosting'>
+
+                <!-- 포스트 제목 -->
+                <h2 class='post-title' itemprop='name headline'>
+                  <a expr:href='data:post.url' itemprop='url'><data:post.title/></a>
+                </h2>
+
+                <!-- 메타 정보 -->
+                <div class='post-meta'>
+                  <span itemprop='datePublished'><data:post.dateHeader/></span>
+                  <b:if cond='data:post.author'>
+                    &#160;·&#160; <span itemprop='author'><data:post.author/></span>
+                  </b:if>
+                </div>
+
+                <!-- 포스트 본문 -->
+                <div class='post-body' itemprop='articleBody'>
+
+                  <!-- 목록 페이지: 요약 / 포스트 페이지: 전체 -->
+                  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                    <data:post.body/>
+
+                    <!-- 인아티클 광고 (포스트 하단) -->
+                    <div class='ad-post-footer'>
+                      <div class='ad-label'>광고</div>
+                      <!-- ADSENSE-POST-FOOTER-START -->
+                      <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-8527804772343765' data-ad-slot='auto' data-ad-format='auto' data-full-width-responsive='true'/>
+                      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                      <!-- ADSENSE-POST-FOOTER-END -->
+                    </div>
+
+                  <b:else/>
+                    <!-- 목록에서는 스니펫만 -->
+                    <data:post.snippet/>
+                    <p><a expr:href='data:post.url'>▶ 자세히 보기</a></p>
+                  </b:if>
+                </div>
+
+                <!-- 라벨(태그) -->
+                <b:if cond='data:post.labels'>
+                  <div class='post-labels'>
+                    <span>태그:</span>
+                    <b:loop values='data:post.labels' var='label'>
+                      <a expr:href='data:label.url'>#<data:label.name/></a>
+                    </b:loop>
+                  </div>
+                </b:if>
+
+              </div>
+            </b:loop>
+
+            <!-- 글 목록 중간 광고 (JS로 3번째 글 뒤에 삽입) -->
+            <div id='mid-list-ad' class='ad-mid-list' style='display:none'>
+              <div class='ad-label'>광고</div>
+              <!-- ADSENSE-MID-LIST-START -->
+              <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-8527804772343765' data-ad-slot='auto' data-ad-format='auto' data-full-width-responsive='true'/>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              <!-- ADSENSE-MID-LIST-END -->
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class='blog-pager'>
+              <b:if cond='data:olderPageUrl'>
+                <a expr:href='data:olderPageUrl'>← 이전 글</a>
+              </b:if>
+              <b:if cond='data:newerPageUrl'>
+                <a expr:href='data:newerPageUrl'>최신 글 →</a>
+              </b:if>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class='sidebar-wrapper'>
+
+      <!-- 사이드바 광고 300×250 -->
+      <div class='widget ad-sidebar'>
+        <div class='ad-label'>광고</div>
+        <!-- ADSENSE-SIDEBAR-START -->
+        <ins class='adsbygoogle' style='display:block' data-ad-client='ca-pub-8527804772343765' data-ad-slot='auto' data-ad-format='rectangle' data-full-width-responsive='true'/>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <!-- ADSENSE-SIDEBAR-END -->
+      </div>
+
+      <!-- 검색 -->
+      <b:section class='sidebar' id='sidebar' preferred='yes'>
+        <b:widget id='BlogSearch1' title='검색' type='BlogSearch' version='2'>
+          <b:includable id='main'>
+            <div class='widget'>
+              <h2 class='title'><data:title/></h2>
+              <b:include name='searchForm'/>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <!-- 라벨 목록 -->
+        <b:widget id='Label1' title='카테고리' type='Label' version='2'>
+          <b:includable id='main'>
+            <div class='widget'>
+              <h2 class='title'><data:title/></h2>
+              <ul>
+                <b:loop values='data:labels' var='label'>
+                  <li><a expr:href='data:label.url'><data:label.name/> (<data:label.count/>)</a></li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <!-- 최근 글 -->
+        <b:widget id='BlogArchive1' title='최근 글' type='BlogArchive' version='2'>
+          <b:includable id='main'>
+            <div class='widget'>
+              <h2 class='title'><data:title/></h2>
+              <b:include name='interval'/>
+            </div>
+          </b:includable>
+        </b:widget>
+
+      </b:section>
+    </div>
+
+  </div><!-- content-wrapper -->
+</div><!-- outer-wrapper -->
+
+<!-- 푸터 -->
+<div id='footer'>
+  <div class='outer-wrapper'>
+    <p>© <data:blog.title/> | 본 사이트의 정보는 참고용이며 실제 신청은 공식 사이트에서 확인하세요.</p>
+  </div>
+</div>
+
+<script>
+// 글 목록 중간 광고: 3번째 포스트 뒤로 이동
+document.addEventListener('DOMContentLoaded', function() {
+  var posts = document.querySelectorAll('.post-outer');
+  var ad = document.getElementById('mid-list-ad');
+  if (!ad) return;
+  var insertAfter = Math.min(2, posts.length - 1); // 3번째 글(index 2) 뒤
+  if (posts.length >= 3) {
+    posts[insertAfter].insertAdjacentElement('afterend', ad);
+    ad.style.display = 'block';
+  }
+});
+</script>
+
+</body>
+</html>
