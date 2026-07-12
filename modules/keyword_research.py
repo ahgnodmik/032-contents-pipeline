@@ -143,6 +143,9 @@ def research_keywords(seed: str, limit: int | None = None) -> KeywordResult:
         result.keywords = researcher.get_related_keywords(seed, limit)
     except Exception as e:
         print(f"[keyword] Google Trends 실패: {e}")
+
+    if not result.keywords:
+        print(f"[keyword] 리서치 결과 없음 — 시드 키워드 직접 사용: {seed}")
         result.keywords = [Keyword(text=seed, score=100.0)]
 
     return result
