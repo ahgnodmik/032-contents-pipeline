@@ -1,0 +1,62 @@
+name: 건강 블로그 자동 발행
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 08:00 KST (UTC+9)
+    - cron: '0  4 * * *'   # 13:00 KST
+    - cron: '0 10 * * *'   # 19:00 KST
+  workflow_dispatch:         # 수동 실행 버튼
+
+concurrency:
+  group: health-blog         # 동시 실행 방지
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 의존성 설치
+        run: pip install -r requirements.txt
+
+      - name: Blogger 토큰 복원
+        run: |
+          mkdir -p data
+          echo '${{ secrets.BLOGGER_TOKEN_JSON }}' > data/blogger_token.json
+
+      - name: 발행 실행
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NAVER_SEARCH_ADS_API_KEY: ${{ secrets.NAVER_SEARCH_ADS_API_KEY }}
+          NAVER_SEARCH_ADS_SECRET: ${{ secrets.NAVER_SEARCH_ADS_SECRET }}
+          NAVER_SEARCH_ADS_CUSTOMER_ID: ${{ secrets.NAVER_SEARCH_ADS_CUSTOMER_ID }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          HEALTH_BLOGGER_BLOG_ID: ${{ secrets.HEALTH_BLOGGER_BLOG_ID }}
+        run: python daily_run_health.py
+
+      - name: 상태 파일 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/health_rotation_state.json \
+            data/health_published_keywords.json \
+            "data/health_logs/" \
+            2>/dev/null || true
+          git diff --staged --quiet && echo "변경 없음" && exit 0
+          git commit -m "chore(health): 자동 발행 상태 업데이트 [skip ci]"
+          git pull --rebase origin main
+          git push origin main

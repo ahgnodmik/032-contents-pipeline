@@ -17,7 +17,7 @@ def cmd_run(args: argparse.Namespace) -> None:
         print("  .env.example을 참고하여 .env 파일을 생성하세요.")
         sys.exit(1)
 
-    platforms = args.platforms.split(",") if args.platforms else ["tistory", "naver"]
+    platforms = args.platforms.split(",") if args.platforms else ["blogger"]
 
     if args.seed:
         results = run_from_seed(
@@ -32,7 +32,6 @@ def cmd_run(args: argparse.Namespace) -> None:
             args.keyword,
             context=args.context or "",
             platforms=platforms,
-            instagram_image_url=args.image_url or "",
             dry_run=args.dry_run,
         )
         _print_summary([result])
@@ -48,7 +47,7 @@ def cmd_schedule(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     seeds = [s.strip() for s in args.seeds.split(",")]
-    platforms = args.platforms.split(",") if args.platforms else ["tistory", "naver"]
+    platforms = args.platforms.split(",") if args.platforms else ["blogger"]
 
     def job():
         for seed in seeds:
@@ -105,15 +104,14 @@ def main() -> None:
     run_p.add_argument("--seed", help="시드 키워드에서 자동 발굴 후 실행")
     run_p.add_argument("--top-n", type=int, default=3, help="시드에서 발굴할 키워드 수 (기본: 3)")
     run_p.add_argument("--context", help="키워드 관련 추가 컨텍스트")
-    run_p.add_argument("--platforms", help="배포 플랫폼 (쉼표 구분, 예: tistory,naver,instagram)")
-    run_p.add_argument("--image-url", help="인스타그램용 이미지 URL")
+    run_p.add_argument("--platforms", help="배포 플랫폼 (쉼표 구분, 예: blogger,naver)")
     run_p.add_argument("--dry-run", action="store_true", help="발행 없이 콘텐츠 생성만")
 
     sched_p = sub.add_parser("schedule", help="정기 자동 실행 스케줄 등록")
     sched_p.add_argument("--seeds", required=True, help="시드 키워드 목록 (쉼표 구분)")
     sched_p.add_argument("--time", default="09:00", help="실행 시각 HH:MM (기본: 09:00)")
     sched_p.add_argument("--top-n", type=int, default=3, help="키워드 수")
-    sched_p.add_argument("--platforms", help="배포 플랫폼 (쉼표 구분)")
+    sched_p.add_argument("--platforms", help="배포 플랫폼 (쉼표 구분, 예: blogger,naver)")
 
     kw_p = sub.add_parser("keywords", help="키워드 리서치만 실행")
     kw_p.add_argument("seed", help="시드 키워드")

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import hashlib
 import hmac
 import time
@@ -62,11 +63,24 @@ class NaverSearchAdsResearcher:
         resp.raise_for_status()
         data = resp.json()
 
+        def _to_int(val) -> int:
+            # Naver API는 소량일 때 "< 10" 같은 문자열을 반환하기도 함
+            try:
+                return int(val)
+            except (TypeError, ValueError):
+                return 0
+
+        def _to_float(val) -> float:
+            try:
+                return float(val)
+            except (TypeError, ValueError):
+                return 0.0
+
         keywords = []
         for item in data.get("keywordList", [])[:limit]:
-            pc = item.get("monthlyPcQcCnt", 0)
-            mobile = item.get("monthlyMobileQcCnt", 0)
-            competition = item.get("compIdx", 0.0)
+            pc = _to_int(item.get("monthlyPcQcCnt", 0))
+            mobile = _to_int(item.get("monthlyMobileQcCnt", 0))
+            competition = _to_float(item.get("compIdx", 0.0))
             total = pc + mobile
             score = total * (1 - competition) if total > 0 else 0
             keywords.append(

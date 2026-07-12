@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.contents-pipeline.daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/samdong/Desktop/application/032-contents-pipeline/venv/bin/python</string>
+        <string>/Users/samdong/Desktop/application/032-contents-pipeline/daily_run.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/samdong/Desktop/application/032-contents-pipeline</string>
+
+    <!-- 하루 2회: 오전 8시 + 오후 7시 -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key><integer>8</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key><integer>19</integer>
+            <key>Minute</key><integer>0</integer>
+        </dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/Users/samdong/Desktop/application/032-contents-pipeline/data/logs/launchd_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/samdong/Desktop/application/032-contents-pipeline/data/logs/launchd_stderr.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

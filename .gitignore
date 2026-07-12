@@ -3,7 +3,6 @@ __pycache__/
 *.pyc
 *.pyo
 .DS_Store
-data/*.jsonl
 venv/
 .venv/
 *.egg-info/
@@ -11,3 +10,14 @@ dist/
 build/
 .idea/
 .vscode/
+
+# 민감 데이터 — GitHub Actions에서 Secret으로 관리
+credentials.json
+data/blogger_token.json
+data/naver_cookies.pkl
+
+# 파이프라인 실행 로그 (JSONL)
+data/*.jsonl
+
+# 디버그 스크린샷
+data/*.png

@@ -1,0 +1,62 @@
+
+=======================================================
+[daily] 2026-07-12  목표: 3편  시드 32개 순환
+=======================================================
+
+[daily] ▶ 시드 '소상공인지원금' 분석 중...
+[daily]   키워드: '희망리턴패키지'  월 39,500회
+
+[pipeline] 키워드: 희망리턴패키지
+[pipeline] 1/4 콘텐츠 생성 중...
+[content] 섹션별 이미지 삽입 중...
+[pipeline]   제목: 희망리턴패키지 2024 최대 400만원 폐업·재취업 지원금 총정리
+[pipeline] 2/4 OSMU 변환 중...
+[pipeline] 3/4 블로그 플랫폼 발행 중...
+[blogger] 발행 완료: https://mitssum.blogspot.com/2026/07/2024-400.html
+[pipeline]   blogger: https://mitssum.blogspot.com/2026/07/2024-400.html
+[daily]   완료 (1/3): https://mitssum.blogspot.com/2026/07/2024-400.html
+
+[daily]   키워드: '소상공인'  월 30,000회
+
+[pipeline] 키워드: 소상공인
+[pipeline] 1/4 콘텐츠 생성 중...
+[content] 섹션별 이미지 삽입 중...
+[pipeline]   제목: 2024 소상공인 지원금 총정리: 최대 3,000만원 대출·정책자금 받는 법
+[pipeline] 2/4 OSMU 변환 중...
+[pipeline] 3/4 블로그 플랫폼 발행 중...
+[blogger] 발행 완료: https://mitssum.blogspot.com/2026/07/2024-3000.html
+[pipeline]   blogger: https://mitssum.blogspot.com/2026/07/2024-3000.html
+[daily]   완료 (2/3): https://mitssum.blogspot.com/2026/07/2024-3000.html
+
+[daily]   키워드: '폐업지원금'  월 14,820회
+
+[pipeline] 키워드: 폐업지원금
+[pipeline] 1/4 콘텐츠 생성 중...
+[content] 섹션별 이미지 삽입 중...
+[pipeline]   제목: 폐업지원금 최대 250만원 받는 법｜자격조건·신청방법 총정리 2025
+[pipeline] 2/4 OSMU 변환 중...
+[pipeline] 3/4 블로그 플랫폼 발행 중...
+[blogger] 발행 완료: https://mitssum.blogspot.com/2026/07/250-2025.html
+[pipeline]   blogger: https://mitssum.blogspot.com/2026/07/250-2025.html
+[daily]   완료 (3/3): https://mitssum.blogspot.com/2026/07/250-2025.html
+
+=======================================================
+[daily] 완료: 3편 발행  |  로그: data/logs/2026-07-12.json
+=======================================================
+
+
+=======================================================
+[지원금블로그] 2026-07-12  현재 그룹: 출산·육아 지원
+[지원금블로그] 발행 이력: 8개  최근 유사 차단: 7개
+=======================================================
+
+[rotation] 그룹 '출산·육아 지원' — 시드 8개 탐색
+[rotation]   시드 '출산지원금' (마지막 사용: 없음)
+
+[지원금블로그] 선택 키워드: '국민행복카드'
+[지원금블로그]   그룹: 출산·육아 지원 / 시드: 출산지원금 / 월검색: 51,700
+
+
+[pipeline] 키워드: 국민행복카드
+[pipeline] 1/3 콘텐츠 생성 중...
+[지원금블로그] 발행 실패: ['content_generation: peer closed connection without sending complete message body (incomplete chunked read)']
