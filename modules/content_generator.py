@@ -1,5 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
+from datetime import datetime
 
 import anthropic
 
@@ -173,7 +174,10 @@ def generate_blog_post(
 ) -> BlogPost:
     client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
 
-    actual_system = system_prompt or GRANTS_SYSTEM_PROMPT
+    current_year = datetime.now().year
+    year_note = f"현재 연도는 {current_year}년입니다. 모든 정보, 지원 일정, 예산은 {current_year}년 기준으로 작성하세요."
+
+    actual_system = (system_prompt or GRANTS_SYSTEM_PROMPT) + f"\n\n【중요】 {year_note}"
     template = user_prompt_template or GRANTS_USER_PROMPT
     context_line = f"추가 컨텍스트: {context}" if context else ""
     actual_user = template.format(keyword=keyword, context_line=context_line)
